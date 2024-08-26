@@ -9,4 +9,6 @@ public interface OrderService {
     void addOrder(Order order, List<OrderDetail> orderDetail);
 
     List<Order> showList();
+
+    Order findById(int id);
 }

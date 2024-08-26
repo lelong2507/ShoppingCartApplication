@@ -8,7 +8,6 @@ import java.util.Map;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.Banner.Mode;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -91,7 +90,7 @@ public class OrderController {
             }
         }
         orderService.addOrder(order, orderDetails);
-        return "redirect:/products/";
+        return "redirect:/checkOut/orderList";
     }
 
     public double totalPrice(HashMap<Integer, CartSession> cartItems) {

@@ -5,19 +5,21 @@ import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.web.multipart.MultipartFile;
 
 import com.example.ShoppingCartApplication.model.Product;
 import com.example.ShoppingCartApplication.repository.ProductRepository;
 import com.example.ShoppingCartApplication.service.ProductService;
+import com.example.ShoppingCartApplication.utils.FileUtils;
 
 @Service
 public class ProductServiceImpl implements ProductService {
 
     @Autowired
     private ProductRepository productRepository;
-
+    private FileUtils fileUtils;
     @Override
-    public void addProduct(Product product) {
+    public void addProduct(Product product){
         productRepository.save(product);
     }
 

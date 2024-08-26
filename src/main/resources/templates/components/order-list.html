@@ -8,7 +8,7 @@
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <title>Order List</title>
     <style>
-        a{
+        a {
             text-decoration: none;
             color: #fff;
         }
@@ -35,7 +35,7 @@
                 <td th:text="${order.customerAddress}"></td>
                 <td>
                     <button class="btn btn-primary">
-                        <a href="/viewDetail/order/{id}">View Detail</a>
+                        <a th:href="@{/viewDetail/order/{id}(id=${order.id})}">View Detail</a>
                     </button>
                 </td>
             </tr>

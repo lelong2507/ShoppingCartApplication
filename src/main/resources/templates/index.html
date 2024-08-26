@@ -28,6 +28,11 @@
         .app-header a:hover {
             border-bottom: 1px solid #fff;
         }
+
+        img {
+            width: 50px;
+            height: 50px;
+        }
     </style>
 </head>
 
@@ -36,6 +41,7 @@
         <a href="http://localhost:8080/products/">Home</a>
         <a href="/carts/viewCart">My Cart</a>
         <a href="/checkOut/orderList">Order</a>
+        <a href="/products/add">Add Product</a>
     </header>
     <div class="container">
         <div class="list-product">
@@ -45,6 +51,7 @@
                         <td>Id</td>
                         <td>Name</td>
                         <td>Price</td>
+                        <td>Image</td>
                     </tr>
                 </thead>
                 <tbody>
@@ -52,6 +59,9 @@
                         <td th:text="${product.id}"></td>
                         <td th:text="${product.name}"></td>
                         <td th:text="${product.price}"></td>
+                        <td>
+                            <img th:src="'data:image/jpeg;base64,' + ${product.imageBase64}" alt="Product Image">
+                        </td>
                         <td>
                             <a class="btn btn-primary" th:href="@{/carts/addToCart/{id}(id = ${product.id})}">Add
                                 to Cart</a>
